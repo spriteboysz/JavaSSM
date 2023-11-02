@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.deean.dao.StudentDAO">
+    <insert id="insertStudent">
+        insert into library.students(sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc)
+            value (#{sId}, #{stuNum}, #{stuName}, #{stuGender}, #{stuAge}, #{stuClass}, #{stuDesc})
+    </insert>
+
+    <delete id="deleteStudent">
+        delete
+        from students
+        where stu_num = #{stuNum}
+    </delete>
+</mapper>
