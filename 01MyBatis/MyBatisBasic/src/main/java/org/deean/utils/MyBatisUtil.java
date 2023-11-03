@@ -1,5 +1,6 @@
 package org.deean.utils;
 
+import lombok.Getter;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,6 +17,7 @@ import java.io.InputStream;
  */
 
 public class MyBatisUtil {
+    @Getter
     private static final SqlSessionFactory factory;
     private static final ThreadLocal<SqlSession> local = new ThreadLocal<>();
 
@@ -44,7 +46,7 @@ public class MyBatisUtil {
     }
 
     public static <T> T getMapper(Class<T> c) {
-        SqlSession sqlSession = getSqlSession();
+        SqlSession sqlSession = getSqlSession(true);
         return sqlSession.getMapper(c);
     }
 }
