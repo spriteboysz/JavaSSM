@@ -1,9 +1,22 @@
 package org.deean.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.deean.pojo.Student;
 
-public interface StudentDAO {
-    public int insertStudent(Student student);
+import java.util.List;
 
-    public int deleteStudent(String stuNum);
+public interface StudentDAO {
+    int insertStudent(Student student);
+
+    int deleteStudent(String stuNum);
+
+    int updateStudent(Student student);
+
+    List<Student> listStudent();
+
+    Student queryStudent(String stuNum);
+
+    int getCount();
+
+    List<Student> listStudentByPage(@Param("start") int start, @Param("limit") int limit);
 }
