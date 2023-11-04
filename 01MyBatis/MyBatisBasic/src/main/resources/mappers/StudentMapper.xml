@@ -5,20 +5,8 @@
 <mapper namespace="org.deean.dao.StudentDAO">
     <!--设置主键回填,并指定参数-->
     <insert id="insertStudent" useGeneratedKeys="true" keyProperty="sId">
-        insert into library.students(sid,
-                                     stu_num,
-                                     stu_name,
-                                     stu_gender,
-                                     stu_age,
-                                     stu_class,
-                                     stu_desc)
-            value (#{sId},
-                   #{stuNum},
-                   #{stuName},
-                   #{stuGender},
-                   #{stuAge},
-                   #{stuClass},
-                   #{stuDesc})
+        insert into library.students(sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc)
+            value (#{sId}, #{stuNum}, #{stuName}, #{stuGender}, #{stuAge}, #{stuClass}, #{stuDesc})
     </insert>
 
     <delete id="deleteStudent">
@@ -46,25 +34,14 @@
         <result column="stu_class" property="stuClass"/>
         <result column="stu_desc" property="stuDesc"/>
     </resultMap>
+
     <select id="listStudent" resultMap="studentMapper">
-        select sid,
-               stu_num,
-               stu_name,
-               stu_gender,
-               stu_age,
-               stu_class,
-               stu_desc
+        select sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc
         from students
     </select>
 
     <select id="queryStudent" resultMap="studentMapper">
-        select sid,
-               stu_num,
-               stu_name,
-               stu_gender,
-               stu_age,
-               stu_class,
-               stu_desc
+        select sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc
         from students
         where stu_num = #{stuNum}
     </select>
@@ -75,13 +52,7 @@
     </select>
 
     <select id="listStudentByPage" resultMap="studentMapper">
-        select sid,
-               stu_num,
-               stu_name,
-               stu_gender,
-               stu_age,
-               stu_class,
-               stu_desc
+        select sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc
         from students
         limit #{start}, #{limit}
     </select>
