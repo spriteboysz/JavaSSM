@@ -22,7 +22,7 @@
             stu_age    = #{stuAge},
             stu_class  = #{stuClass},
             stu_desc   = #{stuDesc}
-        where stu_num = #{stuNum}
+        where stu_num  = #{stuNum}
     </update>
 
     <resultMap id="studentMapper" type="org.deean.pojo.Student">
