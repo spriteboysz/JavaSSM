@@ -28,20 +28,20 @@ class StudentDAOTest {
 
     @Test
     void deleteStudent() {
-        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        SqlSession sqlSession = MyBatisUtil.getSqlSession(true);
         StudentDAO studentDAO = sqlSession.getMapper(StudentDAO.class);
         int result = studentDAO.deleteStudent("20240101");
-        sqlSession.commit();
+        // sqlSession.commit();
         assertEquals(1, result);
     }
 
     @Test
     void updateStudent() {
-        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        SqlSession sqlSession = MyBatisUtil.getSqlSession(true);
         StudentDAO studentDAO = sqlSession.getMapper(StudentDAO.class);
         Student student = new Student(0, "20240101", "冯H", "M", 18, 2, "星星");
         int result = studentDAO.updateStudent(student);
-        sqlSession.commit();
+        // sqlSession.commit();
         assertEquals(1, result);
     }
 

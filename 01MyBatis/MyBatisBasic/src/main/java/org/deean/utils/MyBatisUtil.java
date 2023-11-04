@@ -21,7 +21,6 @@ public class MyBatisUtil {
     private static final SqlSessionFactory factory;
     private static final ThreadLocal<SqlSession> local = new ThreadLocal<>();
 
-    // code beginning
     static {
         try {
             InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
