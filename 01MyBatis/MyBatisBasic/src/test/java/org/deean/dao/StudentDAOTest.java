@@ -1,5 +1,7 @@
 package org.deean.dao;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.session.SqlSession;
 import org.deean.pojo.Student;
 import org.deean.utils.MyBatisUtil;
@@ -75,6 +77,17 @@ class StudentDAOTest {
         StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
         List<Student> students = studentDAO.listStudentByPage(1, 2);
         for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    @Test
+    void listStudentByPage2() {
+        StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
+        PageHelper.startPage(3, 2);
+        List<Student> students = studentDAO.listStudent();
+        PageInfo<Student> pageInfo = new PageInfo<>(students);
+        for (Student student : pageInfo.getList()) {
             System.out.println(student);
         }
     }
