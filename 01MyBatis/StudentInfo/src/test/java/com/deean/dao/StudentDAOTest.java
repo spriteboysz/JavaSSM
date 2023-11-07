@@ -40,7 +40,7 @@ class StudentDAOTest {
     void queryStudent02() {
         // 子查询
         StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
-        Student student = studentDAO.queryStudent01("20231002");
+        Student student = studentDAO.queryStudent02("张三");
         System.out.println(student);
     }
 }
