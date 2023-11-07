@@ -3,8 +3,36 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.deean.dao.StudentDAO">
-    <select id="listStudent">
-        select *
-        from library.students;
+    <insert id="insertStudent" useGeneratedKeys="true" keyProperty="stuNum">
+        insert into students (stu_num, stu_name, stu_password, class_id)
+        values (#{stuNum}, #{stuName}, #{stuPassword}, #{classId})
+    </insert>
+    <resultMap id="studentMap01" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <result column="stu_address" property="detail.stuAddress"/>
+        <result column="stu_tel" property="detail.stuTel"/>
+        <result column="stu_desc" property="detail.stuDesc"/>
+    </resultMap>
+
+    <select id="queryStudent01" resultMap="studentMap01">
+        select s.stu_num, stu_name, stu_password, stu_address, stu_tel, stu_desc
+        from students s
+                 inner join details d
+                            on s.stu_num = d.stu_num
+        where s.stu_num = #{stuNum}
+    </select>
+
+    <resultMap id="studentMap02" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <association property="detail" select="com.deean.dao.DetailDAO.queryDetail" column="stu_num"/>
+    </resultMap>
+    <select id="queryStudent02" resultMap="studentMap02">
+        select stu_num, stu_name, stu_password
+        from students
+        where stu_name = #{stuName}
     </select>
 </mapper>

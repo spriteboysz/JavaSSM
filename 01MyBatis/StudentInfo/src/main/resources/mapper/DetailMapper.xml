@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deean.dao.DetailDAO">
+    <insert id="insertDetail">
+        insert into grade.details (detail_id, stu_address, stu_tel, stu_desc, stu_num)
+        values (#{detailId}, #{stuAddress}, #{stuTel}, #{stuDesc}, #{stuNum})
+    </insert>
+
+    <resultMap id="detailMap" type="Detail">
+        <id column="detail_id" property="detailId"/>
+        <result column="stu_address" property="stuAddress"/>
+        <result column="stu_tel" property="stuTel"/>
+        <result column="stu_desc" property="stuDesc"/>
+    </resultMap>
+
+    <select id="queryDetail" resultMap="detailMap">
+        select stu_address, stu_tel, stu_desc
+        from grade.details
+        where stu_num = #{stuNum}
+    </select>
+</mapper>

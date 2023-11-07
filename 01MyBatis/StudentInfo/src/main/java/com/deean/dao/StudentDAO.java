@@ -2,8 +2,6 @@ package com.deean.dao;
 
 import com.deean.pojo.Student;
 
-import java.util.List;
-
 /**
  * Author: Deean
  * Date: 2023-11-06 22:54
@@ -12,5 +10,9 @@ import java.util.List;
  */
 
 public interface StudentDAO {
-    List<Student> listStudent();
+    int insertStudent(Student student);
+
+    Student queryStudent01(String stuNum);
+
+    Student queryStudent02(String stuName);
 }
