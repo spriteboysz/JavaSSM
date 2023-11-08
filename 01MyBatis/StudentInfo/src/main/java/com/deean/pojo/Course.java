@@ -9,21 +9,17 @@ import java.util.List;
 
 /**
  * Author: Deean
- * Date: 2023-11-06 22:49
+ * Date: 2023-11-08 21:50
  * FileName: src/main/java/com/deean/pojo
  * Description:
  */
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-public class Student {
-    private String stuNum;
-    private String stuName;
-    private String stuPassword;
-    private int classId;
-    private Detail detail;
-    private Clazz clazz;
-    private List<Course> courses;
+public class Course {
+    private String cId;
+    private String cName;
+    private List<Student> students;
 }

@@ -6,13 +6,15 @@ import com.deean.utils.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StudentDAOTest {
 
     @Test
     void insertStudent() {
-        Student student = new Student("20231003", "李F", "123456", 1, null, null);
+        Student student = new Student("20231003", "李F", "123456", 1, null, null, null);
         Detail detail = new Detail(0, "AAA", "13830303030", "AAA", student.getStuNum());
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         try {
@@ -58,5 +60,23 @@ class StudentDAOTest {
         StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
         Student student = studentDAO.queryStudent12("张三");
         System.out.println(student);
+    }
+
+    @Test
+    void listStudentByClassId() {
+        StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
+        List<Student> students = studentDAO.listStudentByClassId("1");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    @Test
+    void listStudentByCId() {
+        StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
+        List<Student> students = studentDAO.listStudentByCId("20231002");
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 }

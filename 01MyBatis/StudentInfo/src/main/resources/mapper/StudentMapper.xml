@@ -75,4 +75,13 @@
         from students
         where class_id = #{classId}
     </select>
+
+
+    <select id="listStudentByCId" resultMap="studentMap21">
+        select s.stu_num, stu_name, stu_password
+        from students s
+                 inner join grade.grades g
+                            on s.stu_num = g.stu_num
+        where g.cid = #{cId}
+    </select>
 </mapper>

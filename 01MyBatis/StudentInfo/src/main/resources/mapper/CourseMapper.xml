@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deean.dao.CourseDAO">
+    <resultMap id="courseMap01" type="Course">
+        <id column="cid" property="cId"/>
+        <result column="cname" property="cName"/>
+        <collection property="students" ofType="Student">
+            <result column="stu_num" property="stuNum"/>
+            <result column="stu_name" property="stuName"/>
+            <result column="stu_password" property="stuPassword"/>
+        </collection>
+    </resultMap>
+    <select id="queryCourse01" resultMap="courseMap01">
+        select c.cid, cname, s.stu_num, stu_name, stu_password
+        from grade.courses c
+                 inner join grade.grades g
+                 inner join grade.students s
+        where c.cid = #{cId}
+    </select>
+
+    <resultMap id="courseMap12" type="Course">
+        <id column="cid" property="cId"/>
+        <result column="cname" property="cName"/>
+        <collection property="students" select="com.deean.dao.StudentDAO.listStudentByCId" column="cid"/>
+    </resultMap>
+    <select id="queryCourse02" resultMap="courseMap12">
+        select cid, cname
+        from grade.courses
+        where cid = #{cId}
+    </select>
+</mapper>

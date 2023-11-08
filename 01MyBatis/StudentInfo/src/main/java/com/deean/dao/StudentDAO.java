@@ -23,4 +23,5 @@ public interface StudentDAO {
     Student queryStudent12(String stuName);
 
     List<Student> listStudentByClassId(String classId);
+    List<Student> listStudentByCId(String cId);
 }
