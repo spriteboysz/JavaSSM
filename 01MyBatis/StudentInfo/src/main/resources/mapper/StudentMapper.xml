@@ -35,4 +35,44 @@
         from students
         where stu_name = #{stuName}
     </select>
+
+    <resultMap id="studentMap11" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <result column="class_name" property="clazz.className"/>
+        <result column="class_desc" property="clazz.classDesc"/>
+    </resultMap>
+
+    <select id="queryStudent11" resultMap="studentMap11">
+        select stu_num, stu_name, stu_password, class_name, class_desc
+        from students s
+                 inner join classes c
+                            on s.class_id = c.class_id
+        where stu_num = #{stuNum}
+    </select>
+
+    <resultMap id="studentMap12" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <association property="clazz" select="com.deean.dao.ClassDAO.queryClass" column="class_id"/>
+    </resultMap>
+    <select id="queryStudent12" resultMap="studentMap12">
+        select stu_num, stu_name, stu_password, class_id
+        from students
+        where stu_name = #{stuName}
+    </select>
+
+    <resultMap id="studentMap21" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <result column="class_id" property="classId"/>
+    </resultMap>
+    <select id="listStudentByClassId" resultMap="studentMap21">
+        select stu_num, stu_name, stu_password, class_id
+        from students
+        where class_id = #{classId}
+    </select>
 </mapper>

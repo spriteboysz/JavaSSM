@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * Author: Deean
- * Date: 2023-11-06 22:49
+ * Date: 2023-11-08 20:54
  * FileName: src/main/java/com/deean/pojo
  * Description:
  */
@@ -16,11 +18,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Student {
-    private String stuNum;
-    private String stuName;
-    private String stuPassword;
+public class Clazz {
     private int classId;
-    private Detail detail;
-    private Clazz clazz;
+    private String className;
+    private String classDesc;
+    List<Student> students;
 }

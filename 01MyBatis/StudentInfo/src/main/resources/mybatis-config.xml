@@ -7,6 +7,7 @@
     <typeAliases>
         <typeAlias type="com.deean.pojo.Student" alias="Student"/>
         <typeAlias type="com.deean.pojo.Detail" alias="Detail"/>
+        <typeAlias type="com.deean.pojo.Clazz" alias="Clazz"/>
     </typeAliases>
 
     <environments default="mysql">
@@ -24,5 +25,6 @@
     <mappers>
         <mapper resource="mapper/StudentMapper.xml"/>
         <mapper resource="mapper/DetailMapper.xml"/>
+        <mapper resource="mapper/ClassMapper.xml"/>
     </mappers>
 </configuration>

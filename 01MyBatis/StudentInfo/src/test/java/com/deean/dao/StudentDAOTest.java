@@ -12,7 +12,7 @@ class StudentDAOTest {
 
     @Test
     void insertStudent() {
-        Student student = new Student("20231003", "李F", "123456", 1, null);
+        Student student = new Student("20231003", "李F", "123456", 1, null, null);
         Detail detail = new Detail(0, "AAA", "13830303030", "AAA", student.getStuNum());
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         try {
@@ -41,6 +41,22 @@ class StudentDAOTest {
         // 子查询
         StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
         Student student = studentDAO.queryStudent02("张三");
+        System.out.println(student);
+    }
+
+    @Test
+    void queryStudent11() {
+        // 关联查询
+        StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
+        Student student = studentDAO.queryStudent11("20231002");
+        System.out.println(student);
+    }
+
+    @Test
+    void queryStudent12() {
+        // 子查询
+        StudentDAO studentDAO = MyBatisUtil.getMapper(StudentDAO.class);
+        Student student = studentDAO.queryStudent12("张三");
         System.out.println(student);
     }
 }

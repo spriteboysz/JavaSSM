@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deean.dao.ClassDAO">
+    <resultMap id="classMap" type="Clazz">
+        <id column="class_id" property="classId"/>
+        <result column="class_name" property="className"/>
+        <result column="class_desc" property="classDesc"/>
+    </resultMap>
+    <select id="queryClass" resultMap="classMap">
+        select class_id, class_name, class_desc
+        from grade.classes
+        where class_id = #{classId}
+    </select>
+
+    <!--多对一查询-->
+    <resultMap id="classMap11" type="Clazz">
+        <id column="class_id" property="classId"/>
+        <result column="class_name" property="className"/>
+        <result column="class_desc" property="classDesc"/>
+        <collection property="students" ofType="Student">
+            <result column="stu_num" property="stuNum"/>
+            <result column="stu_name" property="stuName"/>
+            <result column="stu_password" property="stuPassword"/>
+        </collection>
+    </resultMap>
+
+    <select id="queryClass11" resultMap="classMap11">
+        select c.class_id, class_name, class_desc, stu_num, stu_name, stu_password
+        from grade.classes c
+                 inner join grade.students s
+                            on c.class_id = s.class_id
+        where c.class_id = #{classId}
+    </select>
+
+    <resultMap id="classMap12" type="Clazz">
+        <id column="class_id" property="classId"/>
+        <result column="class_name" property="className"/>
+        <result column="class_desc" property="classDesc"/>
+        <collection property="students" select="com.deean.dao.StudentDAO.listStudentByClassId" column="class_id"/>
+    </resultMap>
+    <select id="queryClass12" resultMap="classMap12">
+        select class_id, class_name, class_desc
+        from grade.classes
+        where class_id = #{classId}
+    </select>
+</mapper>
