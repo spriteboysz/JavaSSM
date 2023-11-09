@@ -23,7 +23,7 @@
     <resultMap id="courseMap12" type="Course">
         <id column="cid" property="cId"/>
         <result column="cname" property="cName"/>
-        <collection property="students" select="com.deean.dao.StudentDAO.listStudentByCId" column="cid"/>
+        <collection property="students" select="com.deean.dao.StudentDAO.listStudentByCId" column="cid" fetchType="lazy"/>
     </resultMap>
     <select id="queryCourse02" resultMap="courseMap12">
         select cid, cname
