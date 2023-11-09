@@ -4,6 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="jdbc.properties"/>
+
+    <settings>
+        <!-- 二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 日志记录 -->
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
+
     <typeAliases>
         <typeAlias type="com.deean.pojo.Member" alias="Member"/>
     </typeAliases>
