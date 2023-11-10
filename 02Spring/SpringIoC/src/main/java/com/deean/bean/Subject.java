@@ -1,16 +1,14 @@
 package com.deean.bean;
 
+import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.Date;
-import java.util.List;
-
 /**
  * Author: Deean
- * Date: 2023-11-09 23:49
+ * Date: 2023-11-10 21:52
  * FileName: src/main/java/com/deean/bean
  * Description:
  */
@@ -19,11 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Student {
-    private String stuNum;
-    private String stuName;
-    private String stuGender;
-    private int stuAge;
-    private Date StuBirthday;
-    List<Subject> subjects;
+public class Subject {
+    private int subjectId;
+    private String subjectName;
 }
