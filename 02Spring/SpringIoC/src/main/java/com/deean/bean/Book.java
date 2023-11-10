@@ -7,7 +7,6 @@ import lombok.ToString;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Author: Deean
@@ -25,4 +24,8 @@ public class Book {
     private String bookName;
     List<Subject> subjects;
     Map<String, Object> maps;
+
+    public void init(){
+        System.out.println("---book init---");
+    }
 }

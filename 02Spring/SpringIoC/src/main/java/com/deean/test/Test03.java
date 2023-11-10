@@ -13,7 +13,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test03 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Book book = (Book) context.getBean("book");
-        System.out.println(book);
+        Book book1 = (Book) context.getBean("book");
+        System.out.println(book1);
+
+        Book book2 = (Book) context.getBean("book");
+        System.out.println(book2);
     }
 }

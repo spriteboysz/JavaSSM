@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="subject1" class="com.deean.bean.Subject">
+    <bean id="subject1" class="com.deean.bean.Subject" scope="prototype">
         <property name="subjectId" value="1001"/>
         <property name="subjectName" value="Java"/>
     </bean>
@@ -14,7 +14,7 @@
         <property name="subjectName" value="C++"/>
     </bean>
 
-    <bean id="student" class="com.deean.bean.Student">
+    <bean id="student" class="com.deean.bean.Student" init-method="init" destroy-method="destroy" scope="prototype">
         <property name="stuNum" value="10002"/>
         <property name="stuName" value="李四"/>
         <property name="stuGender" value="女"/>
@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean id="book" class="com.deean.bean.Book">
+    <bean id="book" class="com.deean.bean.Book" scope="prototype" init-method="init" lazy-init="true">
         <constructor-arg index="0" value="1001"/>
         <constructor-arg index="1" value="C++"/>
         <constructor-arg index="2">

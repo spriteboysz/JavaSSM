@@ -28,4 +28,12 @@ public class Student {
     private Date StuBirthday;
     List<Subject> subjects;
     Set<Clazz> classes;
+
+    public void init() {
+        System.out.println("---init---");
+    }
+
+    public void destroy() {
+        System.out.println("---destroy---");
+    }
 }

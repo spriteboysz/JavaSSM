@@ -16,5 +16,8 @@ public class Test02 {
         Student student2 = (Student) context.getBean("student");
         System.out.println(student2);
 
+        Student student3 = (Student) context.getBean("student");
+        System.out.println(student3);
+
     }
 }
