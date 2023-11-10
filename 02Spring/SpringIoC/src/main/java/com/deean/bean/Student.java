@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Author: Deean
@@ -26,4 +27,5 @@ public class Student {
     private int stuAge;
     private Date StuBirthday;
     List<Subject> subjects;
+    Set<Clazz> classes;
 }

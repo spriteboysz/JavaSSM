@@ -28,5 +28,30 @@
                 <ref bean="subject2"/>
             </list>
         </property>
+        <property name="classes">
+            <set>
+                <bean class="com.deean.bean.Clazz">
+                    <property name="classId" value="202301"/>
+                    <property name="className" value="AAA"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="book" class="com.deean.bean.Book">
+        <constructor-arg index="0" value="1001"/>
+        <constructor-arg index="1" value="C++"/>
+        <constructor-arg index="2">
+            <list>
+                <ref bean="subject1"/>
+                <ref bean="subject1"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="3">
+            <map>
+                <entry key="1" value-ref="subject1"/>
+                <entry key="2" value-ref="subject2"/>
+            </map>
+        </constructor-arg>
     </bean>
 </beans>
