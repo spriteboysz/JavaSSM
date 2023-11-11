@@ -36,10 +36,10 @@ public class StaticProxy {
     }
 
     public void begin() {
-        System.out.println("---开启事务---");
+        System.out.println("---01开启事务---");
     }
 
     public void commit() {
-        System.out.println("---提交事务---");
+        System.out.println("---01提交事务---");
     }
 }
