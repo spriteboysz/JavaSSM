@@ -1,19 +1,13 @@
-package org.deean.test;
+package org.deean.proxy;
 
+import junit.framework.TestCase;
 import org.deean.dao.BookDAOImpl;
 import org.deean.dao.GeneralDAO;
 import org.deean.dao.StudentDAOImpl;
-import org.deean.proxy.JDKDynamicProxy;
 
-/**
- * Author: Deean
- * Date: 2023-11-11 19:49
- * FileName: src/main/java/org/deean/test
- * Description:
- */
+public class JDKDynamicProxyTest extends TestCase {
 
-public class Test02 {
-    public static void main(String[] args) {
+    public void testGetProxy() {
         BookDAOImpl bookDAO = new BookDAOImpl();
         GeneralDAO proxy = (GeneralDAO) new JDKDynamicProxy(bookDAO).getProxy();
         proxy.delete();
