@@ -25,9 +25,10 @@ public class Student {
     private String stuName;
     private String stuGender;
     private int stuAge;
-    private Date StuBirthday;
+    private Date stuBirthday;
     List<Subject> subjects;
     Set<Clazz> classes;
+    Clazz clazz;
 
     public void init() {
         System.out.println("---init---");

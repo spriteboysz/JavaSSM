@@ -54,4 +54,13 @@
             </map>
         </constructor-arg>
     </bean>
+
+    <!-- 自动装配 -->
+    <bean id="clazz" class="com.deean.bean.Clazz">
+        <property name="classId" value="20233001"/>
+        <property name="className" value="C"/>
+    </bean>
+    <bean id="student2" class="com.deean.bean.Student" autowire="byName">
+        <property name="stuNum" value="20233001"/>
+    </bean>
 </beans>
