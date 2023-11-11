@@ -1,4 +1,4 @@
-package com.deean.springioc2.bean;
+package com.deean.springioc02.bean;
 
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Author: Deean
  * Date: 2023-11-11 15:15
- * FileName: src/main/java/com/deean/springioc2/bean
+ * FileName: src/main/java/com/deean/springioc02/bean
  * Description:
  */
 

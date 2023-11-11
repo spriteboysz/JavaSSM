@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.deean</groupId>
-    <artifactId>SpringIoC2</artifactId>
+    <artifactId>SpringIoC02</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>SpringIoC2</name>
+    <name>SpringIoC02</name>
     <packaging>war</packaging>
 
     <properties>

@@ -1,6 +1,5 @@
-package com.deean.springioc2.bean;
+package com.deean.springioc02.bean;
 
-import lombok.Data;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.context.annotation.Lazy;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * Author: Deean
  * Date: 2023-11-11 15:45
- * FileName: src/main/java/com/deean/springioc2/bean
+ * FileName: src/main/java/com/deean/springioc02/bean
  * Description:
  */
 

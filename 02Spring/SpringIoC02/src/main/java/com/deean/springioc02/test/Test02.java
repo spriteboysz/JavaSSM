@@ -1,13 +1,13 @@
-package com.deean.springioc2.test;
+package com.deean.springioc02.test;
 
-import com.deean.springioc2.bean.Book;
-import com.deean.springioc2.bean.Clazz;
+import com.deean.springioc02.bean.Book;
+import com.deean.springioc02.bean.Clazz;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Author: Deean
  * Date: 2023-11-11 15:48
- * FileName: src/main/java/com/deean/springioc2/test
+ * FileName: src/main/java/com/deean/springioc02/test
  * Description:
  */
 
@@ -24,7 +24,7 @@ public class Test02 {
         //---Class实例创建---
         //---工厂初始化---
         //---Book实例创建---
-        //com.deean.springioc2.bean.Book@5dda768f
-        //com.deean.springioc2.bean.Clazz@7a8c8dcf
+        //com.deean.springioc02.bean.Book@5dda768f
+        //com.deean.springioc02.bean.Clazz@7a8c8dcf
     }
 }

@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  */
 
 public class CGLibDynamicProxy implements MethodInterceptor {
-    private Object object;
+    private final Object object;
 
     public CGLibDynamicProxy(Object object) {
         this.object = object;
