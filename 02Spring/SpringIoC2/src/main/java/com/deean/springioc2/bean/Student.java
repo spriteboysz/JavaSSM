@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 import java.util.Date;
 
 /**
@@ -26,13 +29,15 @@ public class Student {
     private Date stuBirthday;
     @Autowired(required = false)
     private Clazz clazz;
+    @Resource // 自动装配 1. ByName 2.ByType
+    private Book book;
 
-
+    @PostConstruct
     public void init() {
         System.out.println("---student init---");
     }
 
-
+    @PreDestroy
     public void destroy() {
         System.out.println("---student destroy---");
     }

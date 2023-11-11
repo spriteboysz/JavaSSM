@@ -1,5 +1,8 @@
 package com.deean.springioc2.bean;
 
+import lombok.Data;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -14,9 +17,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("singleton")
 @Lazy()
+@ToString
+@Setter
 public class Book {
-    private int bookId;
-    private String bookName;
+    private int bookId = 1;
+    private String bookName = "Java";
 
     public Book() {
         System.out.println("---Book实例创建---");
