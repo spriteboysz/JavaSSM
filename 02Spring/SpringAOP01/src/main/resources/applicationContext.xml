@@ -17,7 +17,7 @@
             <aop:after method="commit" pointcut-ref="method"/>
         </aop:aspect>
         <aop:aspect ref="logManager">
-            <aop:before method="printLog" pointcut-ref="method"/>
+            <aop:around method="printLog" pointcut-ref="method"/>
         </aop:aspect>
     </aop:config>
 
