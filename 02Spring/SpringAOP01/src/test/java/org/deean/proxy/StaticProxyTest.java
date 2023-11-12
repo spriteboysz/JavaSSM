@@ -18,5 +18,4 @@ public class StaticProxyTest extends TestCase {
         proxy.delete();
         proxy.update();
     }
-
 }

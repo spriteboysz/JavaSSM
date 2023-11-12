@@ -11,7 +11,7 @@ import org.deean.dao.GeneralDAO;
 
 public class StaticProxy {
 
-    GeneralDAO generalDAO;
+    final GeneralDAO generalDAO;
 
     public StaticProxy(GeneralDAO generalDAO) {
         this.generalDAO = generalDAO;
