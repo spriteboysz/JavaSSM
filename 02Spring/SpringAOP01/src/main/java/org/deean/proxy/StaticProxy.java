@@ -36,7 +36,7 @@ public class StaticProxy {
     }
 
     public void begin() {
-        System.out.println("---01开启事务---");
+        System.out.println("\n---01开启事务---");
     }
 
     public void commit() {

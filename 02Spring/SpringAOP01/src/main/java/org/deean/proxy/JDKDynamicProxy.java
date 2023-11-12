@@ -33,7 +33,7 @@ public class JDKDynamicProxy implements InvocationHandler {
     }
 
     public void begin() {
-        System.out.println("---02开启事务---");
+        System.out.println("\n---02开启事务---");
     }
 
     public void commit() {

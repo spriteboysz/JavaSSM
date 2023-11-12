@@ -36,7 +36,7 @@ public class CGLibDynamicProxy implements MethodInterceptor {
     }
 
     public void begin() {
-        System.out.println("---03开启事务---");
+        System.out.println("\n---03开启事务---");
     }
 
     public void commit() {
