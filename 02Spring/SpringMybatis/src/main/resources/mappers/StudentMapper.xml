@@ -2,6 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
-
+<mapper namespace="org.deean.dao.StudentDAO">
+    <resultMap id="studentMap" type="Student">
+        <id column="sid" property="sId"/>
+        <result column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_gender" property="stuGender"/>
+        <result column="stu_age" property="stuAge"/>
+        <result column="stu_class" property="stuClass"/>
+        <result column="stu_desc" property="stuDesc"/>
+    </resultMap>
+    <select id="queryStudent" resultMap="studentMap">
+        select sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc
+        from library.students;
+    </select>
 </mapper>
