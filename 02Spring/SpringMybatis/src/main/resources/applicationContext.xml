@@ -44,18 +44,21 @@
         <property name="dataSource" ref="druidDataSource"/>
     </bean>
 
+    <!--使用注解配置管理事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--使用XML配置管理事务-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="insert*" isolation="REPEATABLE_READ" propagation="REQUIRED"/>
             <tx:method name="delete*" isolation="REPEATABLE_READ" propagation="REQUIRED"/>
             <tx:method name="update*" isolation="REPEATABLE_READ" propagation="REQUIRED"/>
             <tx:method name="query*" isolation="REPEATABLE_READ" propagation="SUPPORTS"/>
+            <tx:method name="listStudent" isolation="REPEATABLE_READ" propagation="SUPPORTS"/>
         </tx:attributes>
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="crud" expression="execution(* org.deean.dao.*.*(..))"/>
+        <aop:pointcut id="crud" expression="execution(* org.deean.service.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="crud"/>
     </aop:config>
-
 </beans>

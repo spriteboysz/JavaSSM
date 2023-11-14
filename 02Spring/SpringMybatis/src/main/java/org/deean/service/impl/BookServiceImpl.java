@@ -4,6 +4,9 @@ import org.deean.dao.BookDAO;
 import org.deean.pojo.Book;
 import org.deean.service.BookService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,6 +26,7 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ, propagation = Propagation.SUPPORTS)
     public List<Book> listBook() {
         return bookDAO.queryBook();
     }
