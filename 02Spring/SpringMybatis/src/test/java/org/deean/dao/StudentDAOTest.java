@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class StudentDAOTest {
@@ -21,5 +22,14 @@ class StudentDAOTest {
         for (Student student : students) {
             System.out.println(student);
         }
+    }
+
+    @Test
+    void insertStudent() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        StudentDAO studentDAO = (StudentDAO) context.getBean("studentDAO");
+        Student student = new Student(0, "20240102", "陈I", "F", 19, 2, "ABC");
+        int i = studentDAO.insertStudent(student);
+        assertEquals(1, i);
     }
 }

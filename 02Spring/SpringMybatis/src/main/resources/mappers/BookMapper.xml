@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.deean.pojo.Book">
+<mapper namespace="org.deean.dao.BookDAO">
     <resultMap id="bookMap" type="Book">
         <id column="bid" property="bId"/>
         <result column="book_num" property="bookNum"/>

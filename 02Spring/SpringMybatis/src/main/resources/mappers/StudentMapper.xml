@@ -16,4 +16,9 @@
         select sid, stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc
         from library.students;
     </select>
+
+    <insert id="insertStudent">
+        insert into library.students(stu_num, stu_name, stu_gender, stu_age, stu_class, stu_desc)
+        values (#{stuNum}, #{stuName}, #{stuGender}, #{stuAge}, #{stuClass}, #{stuDesc})
+    </insert>
 </mapper>
