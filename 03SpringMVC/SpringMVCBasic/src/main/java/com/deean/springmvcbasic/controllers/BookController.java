@@ -13,5 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/book")
 public class BookController {
+    @RequestMapping("/add")
+    public void add(String name, String author, double price) {
+        System.out.println("---book add---");
+        System.out.println(name);
+        System.out.println(author);
+        System.out.println(price);
 
+    }
+
+    @RequestMapping("/list")
+    public void list() {
+        System.out.println("---book list---");
+
+    }
 }
