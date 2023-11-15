@@ -78,7 +78,6 @@ public class BookController {
     @ResponseBody
     public List<Book> list2(@RequestBody Book book, HttpServletResponse response) {
         System.out.println("---book list---");
-        List<Book> books = new ArrayList<>();
-        return books;
+        return new ArrayList<>();
     }
 }
