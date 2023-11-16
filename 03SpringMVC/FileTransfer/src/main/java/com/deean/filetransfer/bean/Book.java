@@ -19,7 +19,7 @@ import lombok.ToString;
 public class Book {
     private int bookId;
     private String bookName;
-    private String bookAuther;
+    private String bookAuthor;
     private double bookPrice;
     private String BookCover;
 }

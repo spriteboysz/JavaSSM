@@ -3,6 +3,8 @@ package com.deean.filetransfer.controller;
 import com.deean.filetransfer.bean.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Author: Deean
@@ -16,7 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BookController {
 
     @RequestMapping("/add")
-    private void addBook(Book book){
+    public void addBook(Book book, @RequestParam("bookImage") MultipartFile bookImage) {
+        System.out.println("---book add---");
+        System.out.println(book);
+        System.out.println(bookImage);
 
     }
 }
