@@ -11,5 +11,7 @@
 </head>
 <body>
 tips
+${tips01}
+${tips02}
 </body>
 </html>
