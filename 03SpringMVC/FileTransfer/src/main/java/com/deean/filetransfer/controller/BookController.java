@@ -20,8 +20,10 @@ public class BookController {
     @RequestMapping("/add")
     public void addBook(Book book, @RequestParam("bookImage") MultipartFile bookImage) {
         System.out.println("---book add---");
-        System.out.println(book);
-        System.out.println(bookImage);
-
+        String originalFilename = bookImage.getOriginalFilename();
+        System.out.println(originalFilename);
+        assert originalFilename != null;
+        String ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+        System.out.println(ext);
     }
 }
