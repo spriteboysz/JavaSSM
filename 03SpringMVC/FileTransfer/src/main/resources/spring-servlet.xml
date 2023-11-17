@@ -13,17 +13,26 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:annotation-config/>
     <context:component-scan base-package="com.deean"/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="converterFactory"/>
 
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/img/**" location="/img/"/>
+
+    <bean id="converterFactory" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.deean.filetransfer.handller.MyDateConvert01"/>
+            </set>
+        </property>
+    </bean>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/book/add"/>
+            <!--拦截图片显示-->
             <mvc:mapping path="/book/list"/>
             <mvc:mapping path="/student/**"/>
             <mvc:exclude-mapping path="/student/add"/>

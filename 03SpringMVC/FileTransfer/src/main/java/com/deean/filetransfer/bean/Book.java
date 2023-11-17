@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
+
 /**
  * Author: Deean
  * Date: 2023-11-16 23:28
@@ -22,4 +24,5 @@ public class Book {
     private String bookAuthor;
     private double bookPrice;
     private String BookCover;
+    private Date bookDate;
 }

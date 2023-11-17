@@ -26,7 +26,7 @@ public class MyInterceptor01 implements HandlerInterceptor {
             }
         }
         response.setStatus(400);
-        return false;
+        return true;
     }
 
     @Override

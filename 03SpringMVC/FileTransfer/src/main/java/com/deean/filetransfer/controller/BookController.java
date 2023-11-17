@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Author: Deean
@@ -51,6 +52,7 @@ public class BookController {
     public String[] listBook(HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("img");
         File imgDir = new File(path);
+        System.out.println(Arrays.toString(imgDir.list()));
         return imgDir.list();
     }
 
@@ -62,6 +64,5 @@ public class BookController {
         response.setContentType("application/exe");
         response.addHeader("content-disposition", "attachment;filename=" + fileName);
         IOUtils.copy(fileInputStream, response.getOutputStream());
-
     }
 }
