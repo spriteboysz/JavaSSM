@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deean.ssmdemo.dao.StudentDAO">
+    <resultMap id="studentMap" type="Student">
+        <id column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_password" property="stuPassword"/>
+        <result column="class_id" property="stuClassId"/>
+    </resultMap>
+    <select id="queryStudentByName" resultMap="studentMap">
+        select stu_num, stu_name, stu_password, class_id
+        from grade.students
+        where stu_name = #{stuName}
+    </select>
+</mapper>

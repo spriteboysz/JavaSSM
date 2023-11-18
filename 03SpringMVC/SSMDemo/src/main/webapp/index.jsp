@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title></title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
+<h3>主页面</h3>
+欢迎您 ${student.stuName}
 </body>
 </html>
